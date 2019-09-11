@@ -1,30 +1,21 @@
-# Truss Terraform Module template
+Configures VPC flow logs for the given VPC.
+ 
+Creates the following resources:
 
-This repository is meant to be a template repo we can just spin up new module repos from with our general format.
-
-## How to
-
-# Actual readme below. Delete above here.
-
-_Please put a description of what this module does here_
-
-## Terraform Versions
-
-_This is how we're managing the different versions._
-Terraform 0.12. Pin module version to ~> 2.0. Submit pull-requests to master branch.
-
-Terraform 0.11. Pin module version to ~> 1.0. Submit pull-requests to terraform011 branch.
+* CloudWatch log group.
+* IAM role.
+* VPC Flow Log.
 
 ## Usage
 
-### Put an example usage of the module here
-
 ```hcl
-module "example" {
-  source = "terraform/registry/path"
-
-  <variables>
-}
+module "vpc_flow_logs" {
+  source = "trussworks/vpc-flow-logs/aws"
+ 
+  vpc_name       = local.vpc_name
+  vpc_id         = module.vpc.vpc_id
+  logs_retention = local.cloudwatch_logs_retention
+} 
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
