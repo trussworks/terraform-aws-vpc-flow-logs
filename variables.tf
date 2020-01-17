@@ -1,11 +1,11 @@
 variable "vpc_id" {
   description = "VPC ID to attach to."
-  type        = "string"
+  type        = string
 }
 
 variable "vpc_name" {
   description = "The VPC name is used to name the flow log resources."
-  type        = "string"
+  type        = string
 }
 
 variable "logs_retention" {
