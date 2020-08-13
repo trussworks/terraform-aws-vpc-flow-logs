@@ -19,12 +19,29 @@ module "vpc_flow_logs" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | ~> 0.12.0 |
+| aws | ~> 2.70 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | ~> 2.70 |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| logs\_retention | Number of days you want to retain log events in the log group. | string | `"90"` | no |
-| vpc\_id | VPC ID to attach to. | string | n/a | yes |
-| vpc\_name | The VPC name is used to name the flow log resources. | string | n/a | yes |
+|------|-------------|------|---------|:--------:|
+| logs\_retention | Number of days you want to retain log events in the log group. | `number` | `90` | no |
+| vpc\_id | VPC ID to attach to. | `string` | n/a | yes |
+| vpc\_name | The VPC name is used to name the flow log resources. | `string` | n/a | yes |
+
+## Outputs
+
+No output.
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
