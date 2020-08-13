@@ -1,25 +1,3 @@
-/**
- * Configures VPC flow logs for the given VPC.
- *
- * Creates the following resources:
- *
- * * CloudWatch log group.
- * * IAM role.
- * * VPC Flow Log.
- *
- * ## Usage
- *
- * ```hcl
- * module "vpc_flow_logs" {
- *   source = "trussworks/vpc-flow-logs/aws"
- *
- *   vpc_name       = local.vpc_name
- *   vpc_id         = module.vpc.vpc_id
- *   logs_retention = local.cloudwatch_logs_retention
- * }
- * ```
- */
-
 resource "aws_flow_log" "main" {
   log_destination = aws_cloudwatch_log_group.main.arn
   iam_role_arn    = aws_iam_role.main.arn
