@@ -32,7 +32,6 @@ data "aws_iam_policy_document" "assume_role_policy" {
 data "aws_iam_policy_document" "role_policy" {
   statement {
     actions = [
-      "logs:CreateLogGroup",
       "logs:CreateLogStream",
       "logs:PutLogEvents",
       "logs:DescribeLogGroups",
