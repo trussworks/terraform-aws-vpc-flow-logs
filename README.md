@@ -39,6 +39,7 @@ module "vpc_flow_logs" {
 | logs\_retention | Number of days you want to retain log events in the log group. | `number` | `90` | no |
 | vpc\_id | VPC ID to attach to. | `string` | n/a | yes |
 | vpc\_name | The VPC name is used to name the flow log resources. | `string` | n/a | yes |
+| tags | A standard map of optional tags to add to the log group for billing purposes. | `map(string)` | n/a | no |
 
 ## Outputs
 
