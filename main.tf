@@ -12,6 +12,9 @@ resource "aws_flow_log" "main" {
 resource "aws_cloudwatch_log_group" "main" {
   name              = "vpc-flow-logs-${var.vpc_name}"
   retention_in_days = var.logs_retention
+
+  tags = var.tags
+
 }
 
 #
