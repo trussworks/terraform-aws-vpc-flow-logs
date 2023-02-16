@@ -1,4 +1,6 @@
 resource "aws_flow_log" "main" {
+  depends_on = [aws_iam_role_policy.main]
+
   log_destination = aws_cloudwatch_log_group.main.arn
   iam_role_arn    = aws_iam_role.main.arn
   vpc_id          = var.vpc_id
